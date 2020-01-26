@@ -14,6 +14,11 @@ public final class Constants {
 	public static final int CONTROL_PANEL_FULL_ROTATION_BUTTON = -1;
 
 	/*
+	 * User Interface (Shuffleboard)
+	 */
+	public static final String SHUFFLEBOARD_DATA_TAB_NAME = "data";
+
+	/*
 	 * CAN IDs
 	 */
 	public static final int LEFT_FRONT_DRIVE_MOTOR = 12;
