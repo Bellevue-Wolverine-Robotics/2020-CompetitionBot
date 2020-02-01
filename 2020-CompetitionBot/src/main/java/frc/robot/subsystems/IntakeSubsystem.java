@@ -4,20 +4,33 @@ import static frc.robot.Constants.*;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
 
-    public static final double MOTOR_SPEED = 1.0;
-
     private final WPI_TalonSRX intakeMotor = new WPI_TalonSRX(INTAKE_MOTOR);
 
-    public IntakeSubsystem() {
+    private final DoubleSolenoid intakeSolenoid = new DoubleSolenoid(INTAKE_DEPLOY, INTAKE_RETRACT);
 
+    public IntakeSubsystem() {
+        this.intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void toggleIntakeDeploy() {
+        if (this.intakeSolenoid.get() == DoubleSolenoid.Value.kForward) {
+            this.intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
+        } else {
+            this.intakeSolenoid.set(DoubleSolenoid.Value.kForward);
+        }
+    }
+
+    public void stopIntakeDeploy() {
+        this.intakeSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 
     public void startIntake() {
-        this.intakeMotor.set(MOTOR_SPEED);
+        this.intakeMotor.set(1.0);
     }
 
     public void stopIntake() {

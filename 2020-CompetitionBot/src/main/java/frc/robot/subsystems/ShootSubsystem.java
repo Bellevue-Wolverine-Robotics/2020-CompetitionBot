@@ -7,8 +7,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShootSubsystem extends SubsystemBase {
 
-    public static final double MOTOR_SPEED = 1.0;
-
     private final CANSparkMax shootMotor = new CANSparkMax(SHOOT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
 
     public ShootSubsystem() {
@@ -16,7 +14,7 @@ public class ShootSubsystem extends SubsystemBase {
     }
 
     public void startShoot() {
-        this.shootMotor.set(MOTOR_SPEED);
+        this.shootMotor.set(0.1);
     }
 
     public void stopShoot() {
