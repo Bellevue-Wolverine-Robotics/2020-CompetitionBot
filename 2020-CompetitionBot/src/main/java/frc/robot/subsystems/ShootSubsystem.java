@@ -14,7 +14,7 @@ public class ShootSubsystem extends SubsystemBase {
     }
 
     public void startShoot() {
-        this.shootMotor.set(0.1);
+        this.shootMotor.set(-0.5);
     }
 
     public void stopShoot() {
