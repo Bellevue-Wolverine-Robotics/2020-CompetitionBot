@@ -11,7 +11,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     //private final WPI_TalonSRX intakeMotor = new WPI_TalonSRX(INTAKE_MOTOR);
 
-    private final DoubleSolenoid intakeSolenoid = new DoubleSolenoid(INTAKE_DEPLOY, INTAKE_RETRACT);
+    private final DoubleSolenoid intakeSolenoid = new DoubleSolenoid(INTAKE_DEPLOY_LEFT, INTAKE_RETRACT_LEFT);
 
     public IntakeSubsystem() {
         this.intakeSolenoid.set(DoubleSolenoid.Value.kForward);

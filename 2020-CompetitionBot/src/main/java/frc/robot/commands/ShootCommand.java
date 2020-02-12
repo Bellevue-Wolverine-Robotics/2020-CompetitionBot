@@ -14,7 +14,6 @@ public class ShootCommand extends CommandBase {
 
     @Override
     public void initialize() {
-        System.out.println("initialize() called");
         this.shootSubsystem.startShoot();
     }
 
@@ -25,7 +24,6 @@ public class ShootCommand extends CommandBase {
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("end(" + interrupted + ") called");
         this.shootSubsystem.stopShoot();
     }
 
