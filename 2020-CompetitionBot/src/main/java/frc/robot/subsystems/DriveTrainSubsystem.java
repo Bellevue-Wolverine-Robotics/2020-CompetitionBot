@@ -6,8 +6,6 @@ import com.ctre.phoenix.motorcontrol.can.*;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -29,7 +27,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
     private final WPI_TalonSRX r2 = new WPI_TalonSRX(RIGHT_BACK_DRIVE_MOTOR);
 
     private final Encoder leftEncoder = new Encoder(0, 1);
-    private final Encoder rightEncoder = new Encoder(3,2);
+    private final Encoder rightEncoder = new Encoder(3, 2);
     
     private final SpeedControllerGroup leftControllerGroup = new SpeedControllerGroup(l1, l2);
     private final SpeedControllerGroup rightControllerGroup = new SpeedControllerGroup(r1, r2);

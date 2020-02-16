@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ConveyorSubsystem extends SubsystemBase {
 
-    private final WPI_TalonSRX conveyorMotor1 = new WPI_TalonSRX(CONVEYOR_MOTOR);
-    private final WPI_TalonSRX conveyorMotor2 = new WPI_TalonSRX(CONVEYOR_MOTOR);
+    private final WPI_TalonSRX conveyorMotorBack = new WPI_TalonSRX(FRONT_CONVEYOR_MOTOR);
+    private final WPI_TalonSRX conveyorMotorFront = new WPI_TalonSRX(BACK_CONVEYOR_MOTOR);
 
-    private final SpeedControllerGroup motors = new SpeedControllerGroup(this.conveyorMotor1, this.conveyorMotor2);
+    private final SpeedControllerGroup motors = new SpeedControllerGroup(this.conveyorMotorFront, this.conveyorMotorBack);
 
     public ConveyorSubsystem() {
         

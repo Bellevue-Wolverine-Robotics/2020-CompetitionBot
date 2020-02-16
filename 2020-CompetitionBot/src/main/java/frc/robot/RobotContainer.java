@@ -31,11 +31,11 @@ public class RobotContainer {
 	}
 	
 	private void configureButtonBindings() {
-		// Intake
+		// Toggle Intake
 		new JoystickButton(this.operatorHid, TOGGLE_INTAKE_BUTTON)
 			.whenPressed(new ToggleIntakeCommand(this.intakeSubsystem));
 		
-		
+		// Intake
 		new JoystickButton(this.operatorHid, INTAKE_BUTTON)
 			.whileHeld(new IntakeCommand(this.intakeSubsystem));
 
@@ -84,8 +84,8 @@ public class RobotContainer {
 		return null;
 	}
 
-	public void disable() {
-		//this.intakeSubsystem.stopIntakeDeploy();
+	public void onDisable() {
+		this.intakeSubsystem.stopIntakeDeploy();
 		//this.climbSubsystem.stopClimbDeploy();
 	}
 }

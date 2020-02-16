@@ -9,16 +9,22 @@ public class ShootSubsystem extends SubsystemBase {
 
     private final CANSparkMax shootMotor = new CANSparkMax(SHOOT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
 
+    private double speed;
+
     public ShootSubsystem() {
-        
+        this.speed = -0.65;
+    }
+
+    public double getSpeed() {
+        return this.speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 
     public void startShoot() {
-        this.startShoot(-0.65);
-    }
-
-    public void startShoot(double speed) {
-        this.shootMotor.set(speed);
+        this.shootMotor.set(this.speed);
     }
 
     public void stopShoot() {
