@@ -31,10 +31,11 @@ public class DriveDistanceCommand extends CommandBase {
 
     @Override
     public void execute() {
+        System.out.println(this.driveTrainSubsystem.getLeftEncoderDistance() - this.initialDistance);
         if (!this.isFinished && this.driveTrainSubsystem.getLeftEncoderDistance() - this.initialDistance >= this.targetDistance) {
             this.isFinished = true;
         } else {
-            this.driveTrainSubsystem.arcadeDrive(1.0, 0.0);
+            this.driveTrainSubsystem.arcadeDrive(0.5, 0.0);
         }
     }
     

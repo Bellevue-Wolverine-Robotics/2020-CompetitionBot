@@ -5,6 +5,8 @@ import static frc.robot.Constants.*;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
@@ -35,7 +37,11 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public void startIntake() {
-        this.intakeMotor.set(0.1);
+        this.intakeMotor.set(1.0);
+    }
+
+    public void reverseIntake() {
+        this.intakeMotor.set(-1.0);
     }
 
     public void stopIntake() {

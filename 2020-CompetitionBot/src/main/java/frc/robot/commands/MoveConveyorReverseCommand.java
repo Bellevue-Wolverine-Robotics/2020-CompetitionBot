@@ -3,19 +3,18 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ConveyorSubsystem;
 
-public class MoveConveyorCommand extends CommandBase {
+public class MoveConveyorReverseCommand extends CommandBase {
+	
+	private final ConveyorSubsystem conveyorSubsystem;
 
-    private final ConveyorSubsystem conveyorSubsystem;
-    
-
-    public MoveConveyorCommand(ConveyorSubsystem conveyorSubsystem) {
+    public MoveConveyorReverseCommand(ConveyorSubsystem conveyorSubsystem) {
         this.conveyorSubsystem = conveyorSubsystem;
         this.addRequirements(this.conveyorSubsystem);
     }
 
     @Override
     public void initialize() {
-        this.conveyorSubsystem.startConveyor();
+        this.conveyorSubsystem.startConveyorReverse();
     }
 
     @Override
@@ -26,6 +25,6 @@ public class MoveConveyorCommand extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         this.conveyorSubsystem.stopConveyor();
-
-    }
+	}
+	
 }

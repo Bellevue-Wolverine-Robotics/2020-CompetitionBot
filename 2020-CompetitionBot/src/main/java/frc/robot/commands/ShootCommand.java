@@ -18,6 +18,11 @@ public class ShootCommand extends CommandBase {
     }
 
     @Override
+    public void execute() {
+        System.out.println("current velocity of encoder (rortations per minute)" + this.shootSubsystem.getCurrentSpeed());
+    }
+
+    @Override
     public boolean isFinished() {
         return false;
     }
